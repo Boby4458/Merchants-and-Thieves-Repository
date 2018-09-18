@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class chunkSystem : MonoBehaviour {
 
-    private Dictionary<Vector2Int, Node> nodes;
+    public Dictionary<Vector2Int, Node> nodes;
     private Vector2Int playerPosOnGrid;
     public float nodeSize;
     private Node curNode;
