@@ -8,8 +8,12 @@ public class botManager : MonoBehaviour {
     public float horseBotsAmount;
     public float footBotsAmount;
     public chunkSystem chunkSystem;
+    public BotPathManager pathManager;
 
-
+    private void Start()
+    {
+        pathManager = new BotPathManager();
+    }
     private void initBots()
     {
         
@@ -35,7 +39,7 @@ public class botManager : MonoBehaviour {
        
     }
 
-    private Vector3 rndBotPos (Mesh terrain, Vector3 offset, Vector2 sizeBox)
+    private Vector3 rndBotPos (Vector3 offset, Vector2 sizeBox)
     {
         Vector3 returnPos = Vector3.zero;
         returnPos = new Vector3(Random.Range(0, sizeBox.x), Random.Range (0, sizeBox.y));

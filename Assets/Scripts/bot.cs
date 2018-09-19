@@ -3,12 +3,13 @@ using UnityEngine;
 using System.Collections.Generic;
 
 
-public class bot : chunkSystem{
+public class bot : botManager {
 
     public Vector3 myPos;
     public List<tradingItem> myItems;
-    public Node targetTown;
+    public town targetTown;
     public transportType _transportType;
+    public int botMoney;
 
     public bot (Vector3 myPos, transportType _transportType){
         this.myPos = myPos;
@@ -17,9 +18,9 @@ public class bot : chunkSystem{
         targetTown = closestTownChunk(myPos);
     }
 
-    public Node closestTownChunk(Vector3 fromPos)
+    /*public town closestTownChunk(Vector3 fromPos)
     {
-        Node returnNode = null;
+        town returnTown = null;
 
         float lowestDist = Mathf.Infinity;
 
@@ -30,14 +31,22 @@ public class bot : chunkSystem{
                 float tempDist = Vector3.Distance(fromPos, tempTown.gameObject.transform.position);
                 if (tempDist < lowestDist)
                 {
-                    returnNode = tempTown;
+                    returnTown = tempTown.myTown;
                     lowestDist = tempDist;
                 }
             }
         }
 
-        return returnNode;
+        return returnTown;
     }
-
+    */
+    public town cheapestTown()
+    {
+        town returnTown;
+         
+        
+       
+        return returnTown;
+    }
 }
 
