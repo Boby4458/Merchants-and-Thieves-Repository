@@ -15,7 +15,7 @@ public class bot : botManager {
         this.myPos = myPos;
         this._transportType = _transportType;
 
-        targetTown = closestTownChunk(myPos);
+       // targetTown = closestTownChunk(myPos);
     }
 
     /*public town closestTownChunk(Vector3 fromPos)
@@ -43,10 +43,10 @@ public class bot : botManager {
     public town cheapestTown()
     {
         town returnTown;
-         
+
         
        
-        return returnTown;
+        return null;
     }
 }
 
