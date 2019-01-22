@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class botManager : MonoBehaviour {
 
-    public List<bot> curBots = new List<bot>();
+    public List<botBase> curBots = new List<botBase>();
     public float trainBotsAmount;
     public float horseBotsAmount;
     public float footBotsAmount;

@@ -3,20 +3,28 @@ using UnityEngine;
 using System.Collections.Generic;
 
 
-public class bot : botManager {
+public class citizenBot : MonoBehaviour, botBase {
 
-    public Vector3 myPos;
-    public List<tradingItem> myItems;
-    public town targetTown;
-    public transportType _transportType;
-    public int botMoney;
+    public botType type { get; set; }
+    public botInventory inventory { get; set; }
+    public transportType transportType { get; set; }
+   
+    public citizenBot(Vector3 pos, botType type, botInventory inventory, transportType transportType){
 
-    public bot (Vector3 myPos, transportType _transportType){
-        this.myPos = myPos;
-        this._transportType = _transportType;
+        this.transform.position = pos;
+        this.type = type;
+        this.inventory = inventory;
+        this.transportType = transportType;
 
-       // targetTown = closestTownChunk(myPos);
     }
+    
+    public void die()
+    {
+        Destroy(this.gameObject);
+    }
+
+
+
 
     /*public town closestTownChunk(Vector3 fromPos)
     {
@@ -39,7 +47,7 @@ public class bot : botManager {
 
         return returnTown;
     }
-    */
+    
     public town cheapestTown()
     {
         town returnTown;
@@ -47,6 +55,6 @@ public class bot : botManager {
         
        
         return null;
-    }
+    }*/
 }
 

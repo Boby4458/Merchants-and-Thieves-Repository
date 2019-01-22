@@ -2,19 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class marketManager : MonoBehaviour {
+public class marketManager : MonoBehaviour
+{
 
     public tradingItemData[] dataItems;
-    public Node[] chunks;
+    public town[] towns;
     public float marketRandomness;
 
 
     private void Start()
     {
         refreshMarket();
-        
-    }
 
+    }
+    private void refreshMarket()
+    {
+
+    }
+}
+    /*
         private List<tradingItem> allCurrentItems = new List<tradingItem>();
     private Dictionary<tradingItemData, itemStatistic> getMarketStats (){
 
@@ -104,3 +110,4 @@ sealed class itemStatistic
 
     }
 }
+*/

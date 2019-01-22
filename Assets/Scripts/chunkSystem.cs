@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class chunkSystem : MonoBehaviour {
+    /*
 
     public Dictionary<Vector2Int, Node> nodes;
     private Vector2Int playerPosOnGrid;
@@ -110,5 +111,5 @@ public class chunkSystem : MonoBehaviour {
 
             } catch { }
         }
-    }
+    }*/
 }
