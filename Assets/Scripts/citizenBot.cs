@@ -2,8 +2,9 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+using MT.BotSystem.Bases;
 
-public class citizenBot : MonoBehaviour, botBase {
+public class citizenBot : MonoBehaviour, MT.BotSystem.Bases.botBase {
 
     public botType type { get; set; }
     public botInventory inventory { get; set; }

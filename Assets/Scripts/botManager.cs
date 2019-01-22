@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using MT.BotSystem.Bases;
+
 
 public class botManager : MonoBehaviour {
 

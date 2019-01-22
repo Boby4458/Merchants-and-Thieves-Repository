@@ -1,8 +1,17 @@
-﻿
-public class tradingItem {
+﻿namespace MT
+{ 
+    namespace Economy {
 
-    public tradingItemData myItemType;
-    public int myCost;
+        namespace TradingSystem
+        {
+            public class tradingItem
+            {
 
-    
+                public tradingItemData myItemType;
+                public int myCost;
+                
+            }
+
+        }
+    }
 }

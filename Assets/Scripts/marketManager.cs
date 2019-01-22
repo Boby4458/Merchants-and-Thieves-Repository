@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MT.Economy.TradingSystem;
+
 
 public class marketManager : MonoBehaviour
 {
+    private town[] allTowns;
+    private tradingItemData[] itemData;
+    [SerializeField]
+    private float marketRandomness;
 
-    public tradingItemData[] dataItems;
-    public town[] towns;
-    public float marketRandomness;
-
+    marketManagerCompute manager = new marketManagerCompute ();
 
     private void Start()
     {
@@ -18,6 +21,33 @@ public class marketManager : MonoBehaviour
     private void refreshMarket()
     {
 
+    }
+}
+
+namespace MT
+{
+    namespace Economy
+    {
+
+        namespace TradingSystem
+        { 
+
+            public class marketManagerCompute
+            {
+                public town[] allTowns;
+                public tradingItemData[] itemData;
+                public float marketRandomness;
+
+                public void initManager (ref town[] allTowns, ref tradingItemData[] itemData, float marketRandomness)
+                {
+                    this.allTowns = allTowns;
+                    this.itemData = itemData;
+                    this.marketRandomness = marketRandomness;
+                }
+                
+            }
+
+        }
     }
 }
     /*

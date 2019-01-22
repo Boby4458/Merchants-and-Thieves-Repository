@@ -5,6 +5,10 @@ using System.Xml.Serialization;
 using System.IO;
 using System.Xml;
 
+using MT.TownSystem;
+using MT.Economy.TradingSystem;
+
+
 public class town : MonoBehaviour {
 
     public Vector2Int posOnGrid;
