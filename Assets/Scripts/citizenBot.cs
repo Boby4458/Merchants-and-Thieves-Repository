@@ -13,6 +13,7 @@ public class citizenBot : MonoBehaviour, MT.BotSystem.Bases.botBase {
     public transportType transportType { get; set; }
     public BotPathManager pathManager { get; set; }
 
+
     public citizenBot(Vector3 pos, botType type, inventory inventory, transportType transportType){
 
         this.transform.position = pos;
