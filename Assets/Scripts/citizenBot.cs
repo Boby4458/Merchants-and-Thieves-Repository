@@ -3,20 +3,24 @@ using UnityEngine;
 using System.Collections.Generic;
 
 using MT.BotSystem.Bases;
+using MT.BotSystem;
+using MT.Economy.TradingSystem;
 
 public class citizenBot : MonoBehaviour, MT.BotSystem.Bases.botBase {
 
     public botType type { get; set; }
-    public botInventory inventory { get; set; }
+    public inventory inventory{ get; set; }
     public transportType transportType { get; set; }
-   
-    public citizenBot(Vector3 pos, botType type, botInventory inventory, transportType transportType){
+    public BotPathManager pathManager { get; set; }
+
+    public citizenBot(Vector3 pos, botType type, inventory inventory, transportType transportType){
 
         this.transform.position = pos;
         this.type = type;
         this.inventory = inventory;
         this.transportType = transportType;
 
+        pathManager = new BotPathManager();
     }
     
     public void die()

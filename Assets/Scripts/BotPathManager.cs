@@ -3,53 +3,60 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
-public class BotPathManager 
+namespace MT
 {
-
-    public Dictionary<pathParam, path> paths = new Dictionary<pathParam, path>();
-
-    public bool isNeighbour(town fromTown, town toTown)
+    namespace BotSystem
     {
-        path outPath;
-        if (paths.TryGetValue(new pathParam(fromTown, toTown), out outPath))
+
+    
+    public class BotPathManager
+    {
+
+        public Dictionary<pathParam, path> paths = new Dictionary<pathParam, path>();
+
+        public bool isNeighbour(town fromTown, town toTown)
         {
-            return true;
+            path outPath;
+            if (paths.TryGetValue(new pathParam(fromTown, toTown), out outPath))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+
+            }
         }
-        else
+
+
+    }
+
+
+    public struct pathParam
+    {
+        public town fromTown;
+        public town toTown;
+
+        public pathParam(town fromTown, town toTown)
         {
-            return false;
+            this.fromTown = fromTown;
+            this.toTown = toTown;
 
         }
     }
 
-}
+        public struct path
+        {
+            public pathParam thisPathParam;
+            public Vector3[] pathPoints;
 
+            public path(pathParam thisPathParam, Vector3[] pathPoints)
+            {
+                this.thisPathParam = thisPathParam;
+                this.pathPoints = pathPoints;
 
-public struct pathParam
-{
-    public town fromTown;
-    public town toTown;
+            }
 
-    public pathParam (town fromTown, town toTown)
-    {
-        this.fromTown = fromTown;
-        this.toTown = toTown;
-
+        }
     }
-}
-
-public struct path
-{
-    public pathParam thisPathParam;
-    public Vector3[] pathPoints;
-
-    public path (pathParam thisPathParam, Vector3[] pathPoints)
-    {
-        this.thisPathParam = thisPathParam;
-        this.pathPoints = pathPoints;
-
-    }
-
-   
 }

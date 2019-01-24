@@ -10,11 +10,9 @@ public class botManager : MonoBehaviour {
     public float horseBotsAmount;
     public float footBotsAmount;
     public chunkSystem chunkSystem;
-    public BotPathManager pathManager;
 
     private void Start()
     {
-        pathManager = new BotPathManager();
     }
     private void initBots()
     {

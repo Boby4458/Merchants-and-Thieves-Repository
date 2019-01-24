@@ -13,26 +13,14 @@ namespace MT
 
                 void die();
                 botType type { get; set; }
-                botInventory inventory { get; set; }
+                MT.Economy.TradingSystem.inventory inventory { get; set; }
                 transportType transportType { get; set; }
-
+                MT.BotSystem.BotPathManager pathManager { get; set; }
             }
 
             public enum botType
             {
                 Citizen, Trader, Thieve
-            }
-
-
-
-            public class botInventory
-            {
-                public int money;
-
-
-                public List<tradingItem> items = new List<tradingItem>();
-
-
             }
         }
     }

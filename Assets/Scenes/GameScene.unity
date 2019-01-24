@@ -2297,9 +2297,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093f999145c061b498570b87ab312c8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posOnGrid: {x: 0, y: 0}
-  _marketManager: {fileID: 1975568507}
-  myTown: {fileID: 11400000, guid: 1fe6acf31a68a7c4d9c171577e87b751, type: 2}
 --- !u!4 &650931449
 Transform:
   m_ObjectHideFlags: 0
@@ -5605,9 +5602,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093f999145c061b498570b87ab312c8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posOnGrid: {x: 0, y: 0}
-  _marketManager: {fileID: 1975568507}
-  myTown: {fileID: 11400000, guid: 823252a052ac3ef41b3a11d067ba50a9, type: 2}
 --- !u!4 &1356266385
 Transform:
   m_ObjectHideFlags: 0
@@ -6515,7 +6509,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1716248054
+  randomSeed: 80057372
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -11076,10 +11070,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3091b575d0328a44961f76b915a79a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataItems:
-  - {fileID: 11400000, guid: c72b293abec8f434ab3056c8532beee0, type: 2}
-  - {fileID: 11400000, guid: 169116879a9d2e546a258fa50c166f02, type: 2}
-  towns: []
   marketRandomness: 0
 --- !u!4 &1975568508
 Transform:
