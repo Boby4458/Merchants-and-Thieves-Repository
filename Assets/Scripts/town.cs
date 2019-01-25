@@ -11,23 +11,21 @@ using MT.Economy.TradingSystem;
 
 public class town : MonoBehaviour {
 
-    public Vector2Int posOnGrid;
-    public marketManager _marketManager;
-    public List<tradingItem> itemsInChunk = new List<tradingItem>();
     public townData thisTown;
+    public inventory townInventory;
 
     private void Start()
     {
-        print("Showing items of " + thisTown.townName);
+        Debug.Log("Showing items of " + thisTown.townName);
         Invoke("showItems", 2);
     }
     private void showItems()
     {
         //print("Showing items of " + myTown.townName);
 
-        foreach (tradingItem item in itemsInChunk)
+        foreach (tradingItem item in townInventory.items.Keys)
         {
-            print(thisTown.townName + item.myItemType.itemName);
+            Debug.Log(thisTown.townName + item.itemType.itemName);
 
         }
     }

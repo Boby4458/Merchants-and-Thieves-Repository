@@ -16,8 +16,9 @@ namespace MT
             //PC - Per Chunk
 
             public string townName;
-            public int population;
-            public int occupiedChunks;
+            public int totalPopulation;
+            public int maxItems;
+
         }
 
     }
