@@ -9,7 +9,8 @@ public class PlayerControls : MonoBehaviour
     private Vector3 moveDirection;
 
 
-
+    Vector3 forwardDir;
+    Vector3 rightDir;
 
 
     void Update()
@@ -20,9 +21,16 @@ public class PlayerControls : MonoBehaviour
             return;
         }
         GetComponent<Animator>().SetBool("walk", true);
-        moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, -Input.GetAxis("Vertical"));
+
+        forwardDir = new Vector3(-Camera.main.transform.forward.x,0, -Camera.main.transform.forward.z).normalized;
+        rightDir = new Vector3(-Camera.main.transform.right.x, 0, -Camera.main.transform.right.z).normalized;
+
+
+        moveDirection = forwardDir * Input.GetAxis("Horizontal") + rightDir * Input.GetAxis("Vertical");
+
         moveDirection.Normalize();
         transform.rotation = Quaternion.FromToRotation(moveDirection, Vector3.forward * 2);
+
         if (transform.eulerAngles.z != 0)
         {
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
