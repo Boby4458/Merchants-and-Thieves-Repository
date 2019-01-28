@@ -7,7 +7,7 @@
             public class tradingItem
             {
 
-                public tradingItemData itemType;
+                public tradingItemData myItemType;
                 public int myCost;
                 
             }

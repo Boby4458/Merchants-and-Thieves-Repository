@@ -14,10 +14,10 @@ namespace MT
             {
 
                 public string itemName;
-                public int averagePrice;
-                public int averageTotalSupply;
+                public int marketPrice;
+                public int averageSupply;
+                public town[] availableInTowns;
 
-                public Texture2D itemIcon;
 
             }
         }

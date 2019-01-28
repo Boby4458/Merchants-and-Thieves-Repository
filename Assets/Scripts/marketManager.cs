@@ -6,18 +6,21 @@ using MT.Economy.TradingSystem;
 
 public class marketManager : MonoBehaviour
 {
-    public town[] allTowns;
-    public tradingItemData[] itemData;
-    public float marketRandomness;
+    private town[] allTowns;
+    private tradingItemData[] itemData;
+    [SerializeField]
+    private float marketRandomness;
 
-
-
-    private marketManagerCompute manager = new marketManagerCompute ();
+    marketManagerCompute manager = new marketManagerCompute ();
 
     private void Start()
     {
-        manager.initManager(ref allTowns, ref itemData, marketRandomness);
-        
+        refreshMarket();
+
+    }
+    private void refreshMarket()
+    {
+
     }
 }
 
@@ -34,47 +37,16 @@ namespace MT
                 public town[] allTowns;
                 public tradingItemData[] itemData;
                 public float marketRandomness;
-                private int totalPopulation;
 
                 public void initManager (ref town[] allTowns, ref tradingItemData[] itemData, float marketRandomness)
                 {
                     this.allTowns = allTowns;
                     this.itemData = itemData;
                     this.marketRandomness = marketRandomness;
-
-                    calcTotalPopulation();
-                    refreshMarket();
-                   
-
                 }
-                private void calcTotalPopulation()
-                {
-
-                    for (int townIndex = 0; townIndex < allTowns.Length; townIndex++)
-                    {
-                        totalPopulation += allTowns[townIndex].thisTown.totalPopulation;
-                    }
-                }
-                public void refreshMarket()
-                {
-                    for (int townIndex = 0; townIndex < allTowns.Length; townIndex++){
-
-                        for (int itemDataIndex = 0; itemDataIndex < itemData.Length; itemDataIndex++)
-                        {
-                            int itemCost;
-                            int itemQuantity;
-
-                            float randomCostFactor = Random.Range(-marketRandomness, marketRandomness);
-
-                            itemCost = Mathf.RoundToInt((itemData[itemDataIndex].averagePrice * randomCostFactor));
-
-                            float quantityMultiplier = totalPopulation / allTowns[townIndex].thisTown.totalPopulation;
-
-                            itemQuantity = Mathf.RoundToInt((itemData[itemDataIndex].averageTotalSupply * quantityMultiplier));
-                        }
-                    }
-                }
+                
             }
+
         }
     }
 }
